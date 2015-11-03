@@ -9,21 +9,49 @@ Rails.application.routes.draw do
         end
       end
 
-      resources :transactions, defaults: { format: 'json' }
+      resources :transactions, defaults: { format: 'json' } do
+        collection do
+          get "find"
+          get "find_all"
+          get "random"
+        end
+      end
 
-      resources :items, defaults: { format: 'json' }
+      resources :items, defaults: { format: 'json' } do
+        collection do
+          get "find"
+          get "find_all"
+          get "random"
+        end
+      end
 
       resources :merchants, defaults: { format: 'json' } do
         collection do
           get "find"
           get "find_all"
+          get "random"
+        end
+
+        member do
+          get :items
         end
       end
 
-      resources :invoices, defaults: { format: 'json' }
+      resources :invoices, defaults: { format: 'json' } do
+        collection do
+          get "find"
+          get "find_all"
+          get "random"
+        end
+      end
 
-      resources :invoice_items, defaults: { format: 'json' }
-
+      resources :invoice_items, defaults: { format: 'json' } do
+        collection do
+          get "find"
+          get "find_all"
+          get "random"
+        end
+      end
     end
   end
 end
