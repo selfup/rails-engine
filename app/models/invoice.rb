@@ -10,4 +10,8 @@ class Invoice < ActiveRecord::Base
     order("RANDOM()").first
   end
 
+  def self.successful
+    joins(:transactions).where("result = 'success'")
+  end
+
 end
