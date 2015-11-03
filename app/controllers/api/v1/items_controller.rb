@@ -9,6 +9,10 @@ class Api::V1::ItemsController < ApplicationController
     respond_with Item.find_by(id: params[:id])
   end
 
+  def random
+    respond_with Item.random
+  end
+
   def find
     respond_with Item.find_by(item_params)
   end

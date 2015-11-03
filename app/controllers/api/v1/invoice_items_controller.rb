@@ -9,6 +9,10 @@ class Api::V1::InvoiceItemsController < ApplicationController
     respond_with InvoiceItem.find_by(id: params[:id])
   end
 
+  def random
+    respond_with InvoiceItem.random
+  end
+
   def find
     respond_with InvoiceItem.find_by(invoice_item_params)
   end
