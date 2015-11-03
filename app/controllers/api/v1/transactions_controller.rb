@@ -21,6 +21,10 @@ class Api::V1::TransactionsController < ApplicationController
    respond_with Transaction.where(transaction_params)
   end
 
+  def invoice
+    respond_with Transaction.joins(:invoice).where(invoice_id: params[:id])
+  end
+
   private
 
   def transaction_params
