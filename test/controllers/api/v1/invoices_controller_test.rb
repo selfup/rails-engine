@@ -35,4 +35,10 @@ class Api::V1::InvoicesControllerTest < ActionController::TestCase
     assert_equal item.merchant_id, json_response["merchant_id"]
     assert_equal item.status, json_response["status"]
   end
+
+  test '#random' do
+    get :random, format: :json
+
+    assert_response :success
+  end
 end

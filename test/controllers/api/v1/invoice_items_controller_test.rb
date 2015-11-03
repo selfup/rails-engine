@@ -36,4 +36,10 @@ class Api::V1::InvoiceItemsControllerTest < ActionController::TestCase
     assert_equal item.quantity, json_response["quantity"]
     assert_equal item.unit_price, json_response["unit_price"]
   end
+
+  test '#random' do
+    get :random, format: :json
+
+    assert_response :success
+  end
 end

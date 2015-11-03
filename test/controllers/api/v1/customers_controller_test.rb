@@ -34,4 +34,10 @@ class Api::V1::CustomersControllerTest < ActionController::TestCase
     assert_equal item.first_name, json_response["first_name"]
     assert_equal item.last_name, json_response["last_name"]
   end
+
+  test '#random' do
+    get :random, format: :json
+
+    assert_response :success
+  end
 end

@@ -34,4 +34,10 @@ class Api::V1::ItemsControllerTest < ActionController::TestCase
     assert_equal item.name, json_response["name"]
     assert_equal item.description, json_response["description"]
   end
+
+  test '#random' do
+    get :random, format: :json
+
+    assert_response :success
+  end
 end

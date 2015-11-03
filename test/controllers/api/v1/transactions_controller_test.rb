@@ -36,4 +36,10 @@ class Api::V1::TransactionsControllerTest < ActionController::TestCase
     assert_equal item.credit_card_expiration_date, json_response["credit_card_expiration_date"]
     assert_equal item.result, json_response["result"]
   end
+
+  test '#random' do
+    get :random, format: :json
+
+    assert_response :success
+  end
 end
