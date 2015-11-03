@@ -37,6 +37,10 @@ class Api::V1::InvoicesController < ApplicationController
     respond_with Invoice.joins(:customer).where(customer_id: params[:id])
   end
 
+  def merchant
+    respond_with Invoice.joins(:merchant).where(merchant_id: params[:id])
+  end
+
   private
 
   def invoice_params
