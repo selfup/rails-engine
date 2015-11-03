@@ -42,4 +42,16 @@ class Api::V1::TransactionsControllerTest < ActionController::TestCase
 
     assert_response :success
   end
+
+  test '#find' do
+    get :find, format: :json, credit_card_number: 4242424242424242
+
+    assert_response :success
+  end
+
+  test '#find_all' do
+    get :find, format: :json, credit_card_number: 2424242424242424
+
+    assert_response :success
+  end
 end

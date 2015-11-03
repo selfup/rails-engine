@@ -40,4 +40,16 @@ class Api::V1::CustomersControllerTest < ActionController::TestCase
 
     assert_response :success
   end
+
+  test '#find' do
+    get :find, format: :json, first_name: "Regis"
+
+    assert_response :success
+  end
+
+  test '#find_all' do
+    get :find, format: :json, first_name: "Jeff"
+
+    assert_response :success
+  end
 end

@@ -42,4 +42,16 @@ class Api::V1::InvoiceItemsControllerTest < ActionController::TestCase
 
     assert_response :success
   end
+
+  test '#find' do
+    get :find, format: :json, item_id: 1
+
+    assert_response :success
+  end
+
+  test '#find_all' do
+    get :find, format: :json, item_id: 1
+
+    assert_response :success
+  end
 end
