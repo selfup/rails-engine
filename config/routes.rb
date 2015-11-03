@@ -34,6 +34,7 @@ Rails.application.routes.draw do
 
         member do
           get :items
+          get :invoices
         end
       end
 
