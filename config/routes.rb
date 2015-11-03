@@ -4,6 +4,7 @@ Rails.application.routes.draw do
       resources :customers, defaults: { format: 'json' } do
         collection do
           get "find"
+          get "find_all"
         end
       end
 
@@ -14,6 +15,7 @@ Rails.application.routes.draw do
       resources :merchants, defaults: { format: 'json' } do
         collection do
           get "find"
+          get "find_all"
         end
       end
 
