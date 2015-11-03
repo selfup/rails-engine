@@ -50,7 +50,7 @@ class Api::V1::TransactionsControllerTest < ActionController::TestCase
   end
 
   test '#find_all' do
-    get :find, format: :json, credit_card_number: 2424242424242424
+    get :find_all, format: :json, credit_card_number: 2424242424242424
 
     assert_response :success
   end

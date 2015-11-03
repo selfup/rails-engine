@@ -50,7 +50,7 @@ class Api::V1::InvoiceItemsControllerTest < ActionController::TestCase
   end
 
   test '#find_all' do
-    get :find, format: :json, item_id: 1
+    get :find_all, format: :json, item_id: 1
 
     assert_response :success
   end

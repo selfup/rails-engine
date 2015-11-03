@@ -49,7 +49,7 @@ class Api::V1::InvoicesControllerTest < ActionController::TestCase
   end
 
   test '#find_all' do
-    get :find, format: :json, customer_id: 2
+    get :find_all, format: :json, customer_id: 2
 
     assert_response :success
   end

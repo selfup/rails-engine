@@ -48,7 +48,7 @@ class Api::V1::ItemsControllerTest < ActionController::TestCase
   end
 
   test '#find_all' do
-    get :find, format: :json, name: "Phone"
+    get :find_all, format: :json, name: "Phone"
 
     assert_response :success
   end
