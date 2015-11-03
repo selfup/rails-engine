@@ -22,11 +22,11 @@ class Api::V1::InvoicesController < ApplicationController
   end
 
   def transactions
-    respond_with Transaction.joins(:invoice).where(invoice_id: params[:id])
+    respond_with Invoice.find(params[:id]).transactions
   end
 
   def invoice_items
-    respond_with InvoiceItem.joins(:invoice).where(invoice_id: params[:id])
+    respond_with Invoice.find(params[:id]).invoice_items
   end
 
   def items
@@ -47,16 +47,3 @@ class Api::V1::InvoicesController < ApplicationController
     params.permit(:id, :name, :created_at, :updated_at)
   end
 end
-
-
-# def items
-#   respond_with InvoiceItem.joins(:invoice).where(item_id: params[:id])
-# end
-#
-# def transactions
-#   respond_with Invoice.find(params[:id]).transactions
-# end
-#
-# def invoice_items
-#   respond_with Invoice.find(params[:id]).invoice_items
-# end
