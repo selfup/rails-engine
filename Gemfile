@@ -13,6 +13,7 @@ gem 'responders'
 gem 'simplecov'
 
 group :development, :test do
+  gem 'pry'
   gem 'rails-pry'
 end
 
