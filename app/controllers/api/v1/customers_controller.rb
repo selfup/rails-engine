@@ -26,7 +26,7 @@ class Api::V1::CustomersController < ApplicationController
   end
 
   def transactions
-
+    respond_with Transaction.joins(:customer).where(customer_id: params[:id])
   end
 
   private
