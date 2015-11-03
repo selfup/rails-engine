@@ -22,11 +22,11 @@ class Api::V1::CustomersController < ApplicationController
   end
 
   def invoices
-    respond_with Invoice.joins(:customer).where(customer_id: params[:id])
+    respond_with Customer.find(params[:id]).invoices
   end
 
   def transactions
-    respond_with Invoice.joins(:transactions).where(customer_id: params[:id])
+    respond_with Customer.find(params[:id]).transactions
   end
 
   private

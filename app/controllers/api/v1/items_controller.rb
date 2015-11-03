@@ -22,11 +22,11 @@ class Api::V1::ItemsController < ApplicationController
   end
 
   def invoice_items
-    respond_with InvoiceItem.joins(:item).where(item_id: params[:id])
+    respond_with Item.find(params[:id]).invoice_items
   end
 
   def merchant
-    respond_with Item.joins(:merchant).where(merchant_id: params[:id])
+    respond_with Item.find_by(item_params).merchant
   end
 
   private
