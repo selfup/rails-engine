@@ -47,3 +47,11 @@ class Api::V1::InvoicesController < ApplicationController
     params.permit(:id, :name, :created_at, :updated_at)
   end
 end
+
+  # def customer
+  #   respond_with Invoice.find(params[:id]).customer
+  # end
+  #
+  # def merchant
+  #   respond_with Invoice.find(params[:id]).merchant
+  # end
