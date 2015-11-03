@@ -34,11 +34,11 @@ class Api::V1::InvoicesController < ApplicationController
   end
 
   def customer
-    respond_with Invoice.joins(:customer).where(customer_id: params[:id])
+    respond_with Invoice.find(params[:id]).customer
   end
 
   def merchant
-    respond_with Invoice.joins(:merchant).where(merchant_id: params[:id])
+    respond_with Invoice.find(params[:id]).merchant
   end
 
   private
@@ -48,9 +48,7 @@ class Api::V1::InvoicesController < ApplicationController
   end
 end
 
-  # def customer
-  #   respond_with Invoice.find(params[:id]).customer
-  # end
+
   #
   # def merchant
   #   respond_with Invoice.find(params[:id]).merchant
