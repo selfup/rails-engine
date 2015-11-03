@@ -49,7 +49,14 @@ class Api::V1::InvoicesController < ApplicationController
 end
 
 
-  #
-  # def merchant
-  #   respond_with Invoice.find(params[:id]).merchant
-  # end
+# def items
+#   respond_with InvoiceItem.joins(:invoice).where(item_id: params[:id])
+# end
+#
+# def transactions
+#   respond_with Invoice.find(params[:id]).transactions
+# end
+#
+# def invoice_items
+#   respond_with Invoice.find(params[:id]).invoice_items
+# end
