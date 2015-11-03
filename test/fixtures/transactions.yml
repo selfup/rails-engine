@@ -1,12 +1,14 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  id: 1
   invoice_id: 1
   credit_card_number: MyString
   credit_card_expiration_date: MyString
   result: MyString
 
 two:
+  id: 2
   invoice_id: 1
   credit_card_number: MyString
   credit_card_expiration_date: MyString
