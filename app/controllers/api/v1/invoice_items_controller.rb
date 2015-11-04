@@ -38,6 +38,7 @@ class Api::V1::InvoiceItemsController < ApplicationController
       :invoice_id,
       :quantity,
       :unit_price,
+      :invoice_item_id,
       :created_at,
       :updated_at
       )

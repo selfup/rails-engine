@@ -40,6 +40,7 @@ class Api::V1::CustomersController < ApplicationController
       :id,
       :first_name,
       :last_name,
+      :customer_id,
       :created_at,
       :updated_at
       )

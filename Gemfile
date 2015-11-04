@@ -11,8 +11,10 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'responders'
 gem 'simplecov'
+gem "active_model_serializers", github: "rails-api/active_model_serializers"
 
 group :development, :test do
+  gem 'pry'
   gem 'rails-pry'
 end
 
