@@ -51,4 +51,16 @@ class Api::V1::MerchantsControllerTest < ActionController::TestCase
 
     assert_response :success
   end
+
+  test '#invoices' do
+    get :invoices, format: :json, id: 1
+
+    assert_response :success
+  end
+
+  test '#items' do
+    get :items, format: :json, id: 1
+
+    assert_response :success
+  end
 end

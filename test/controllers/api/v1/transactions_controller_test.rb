@@ -53,4 +53,10 @@ class Api::V1::TransactionsControllerTest < ActionController::TestCase
 
     assert_response :success
   end
+
+  test '#invoice' do
+    get :invoice, format: :json, id: 1
+
+    assert_response :success
+  end
 end
