@@ -21,11 +21,17 @@ class Merchant < ActiveRecord::Base
   end
 
   def date_for_revenue(date)
-    invoices.successful.by_date(params[:date]).joins(:invoice_items).sum("quantity * unit_price")
+    invoices.successful.by_date(params[:date]).
+    joins(:invoice_items).sum("quantity * unit_price")
   end
 
   def revenue
     invoices.successful.joins(:invoice_items).sum("quantity * unit_price")
+  end
+
+  def self.total_revenue(params)
+    Invoice.successful.by_date(params[:date]).
+    joins(:invoice_items).sum("quantity * unit_price")
   end
 
   def items_sold
