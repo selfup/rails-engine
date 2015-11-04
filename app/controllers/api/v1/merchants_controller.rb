@@ -29,6 +29,15 @@ class Api::V1::MerchantsController < ApplicationController
     respond_with Merchant.find(params[:id]).items
   end
 
+  def revenue
+    revenue = { :revenue => Merchant.find(params[:id]).revenue.to_s }
+    respond_with revenue
+  end
+
+  def items
+    respond_with Merchant.find(params[:id]).items
+  end
+
   private
 
   def merchant_params
