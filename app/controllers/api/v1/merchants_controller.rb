@@ -35,8 +35,6 @@ class Api::V1::MerchantsController < ApplicationController
     params.permit(
       :id,
       :name,
-      :merchant_id,
-      :date,
       :created_at,
       :updated_at,
       :quantity
