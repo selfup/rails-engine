@@ -5,6 +5,10 @@ class Invoice < ActiveRecord::Base
   has_many :transactions
   has_many :items, through: :invoice_items
 
+  def self.by_date(date)
+    where(created_at: date)
+  end
+
   def self.random
     order("RANDOM()").first
   end

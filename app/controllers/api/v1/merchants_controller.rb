@@ -30,12 +30,16 @@ class Api::V1::MerchantsController < ApplicationController
   end
 
   def revenue
-    revenue = { :revenue => Merchant.find(params[:id]).revenue.to_s }
+    revenue = { :revenue => Merchant.find(params[:id]).revenue_by_param(params).to_s }
     respond_with revenue
   end
 
   def items
     respond_with Merchant.find(params[:id]).items
+  end
+
+  def favorite_customer
+    respond_with Merchant.find(params[:id]).favorite_customer
   end
 
   private
