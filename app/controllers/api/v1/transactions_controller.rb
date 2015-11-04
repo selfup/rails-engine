@@ -28,6 +28,14 @@ class Api::V1::TransactionsController < ApplicationController
   private
 
   def transaction_params
-    params.permit(:id, :name, :created_at, :updated_at)
+    params.permit(
+      :id,
+      :credit_card_number,
+      :result,
+      :invoice_id,
+      :transaction_id,
+      :created_at,
+      :updated_at
+    )
   end
 end
