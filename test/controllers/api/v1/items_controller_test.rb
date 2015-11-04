@@ -47,8 +47,38 @@ class Api::V1::ItemsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test '#find by unit_price' do
+    get :find, format: :json, unit_price: "10.0"
+
+    assert_response :success
+  end
+
   test '#find_all' do
     get :find_all, format: :json, name: "Phone"
+
+    assert_response :success
+  end
+
+  test '#find_all by unit_price' do
+    get :find_all, format: :json, unit_price: "10.0"
+
+    assert_response :success
+  end
+
+  test '#invoice_items' do
+    get :invoice_items, format: :json, id: 1
+
+    assert_response :success
+  end
+
+  test '#merchant' do
+    get :merchant, format: :json, id: 1
+
+    assert_response :success
+  end
+
+  test '#most_items' do
+    get :most_items, format: :json, id: 1
 
     assert_response :success
   end
