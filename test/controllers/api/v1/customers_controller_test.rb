@@ -52,4 +52,22 @@ class Api::V1::CustomersControllerTest < ActionController::TestCase
 
     assert_response :success
   end
+
+  test '#invoices' do
+    get :invoices, format: :json, id: 1
+
+    assert_response :success
+  end
+
+  test '#transactions' do
+    get :transactions, format: :json, id: 1
+
+    assert_response :success
+  end
+
+  # test '#favorite_merchant' do
+  #   get :favorite_merchant, format: :json, customer_params: { "id" => 1 }
+  #
+  #   assert_response :success
+  # end
 end
