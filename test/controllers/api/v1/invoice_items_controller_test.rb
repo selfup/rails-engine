@@ -49,8 +49,20 @@ class Api::V1::InvoiceItemsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test '#find by unit_price' do
+    get :find, format: :json, unit_price: "10.0"
+
+    assert_response :success
+  end
+
   test '#find_all' do
     get :find_all, format: :json, item_id: 1
+
+    assert_response :success
+  end
+
+  test '#find_all by unit_price' do
+    get :find_all, format: :json, unit_price: "10.0"
 
     assert_response :success
   end
