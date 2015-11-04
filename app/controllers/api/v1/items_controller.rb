@@ -14,7 +14,12 @@ class Api::V1::ItemsController < ApplicationController
   end
 
   def find
-    respond_with Item.find_by(item_params)
+    if item_params[:unit_price]
+      respond_with Item.find_by(item_params.
+                                map { |k,v| [k, v.gsub(".", "")]}.to_h)
+    else
+      respond_with Item.find_by(item_params)
+    end
   end
 
   def find_all
