@@ -38,4 +38,8 @@ class Merchant < ActiveRecord::Base
     invoices.successful.joins(:invoice_items).sum("quantity")
   end
 
+  def customers_pending_invoices
+    invoices.pending.distinct.map(&:customer)
+  end
+
 end

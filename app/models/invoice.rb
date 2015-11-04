@@ -9,6 +9,10 @@ class Invoice < ActiveRecord::Base
     where(created_at: date)
   end
 
+  def self.pending
+    joins(:transactions).where(transactions: {result: "failed"})
+  end
+
   def self.random
     order("RANDOM()").first
   end
@@ -16,5 +20,4 @@ class Invoice < ActiveRecord::Base
   def self.successful
     joins(:transactions).where("result = 'success'")
   end
-
 end
