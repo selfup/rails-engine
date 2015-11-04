@@ -18,7 +18,12 @@ class Api::V1::InvoiceItemsController < ApplicationController
   end
 
   def find_all
-   respond_with InvoiceItem.where(invoice_item_params)
+    if invoice_item_params[:unit_price]
+      respond_with InvoiceItem.where(invoice_item_params.
+                                      map { |k,v| [k, v.gsub(".", "")]}.to_h)
+    else
+      respond_with InvoiceItem.where(invoice_item_params)
+    end
   end
 
   def invoice
