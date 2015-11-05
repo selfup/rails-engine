@@ -27,7 +27,7 @@ class Item < ActiveRecord::Base
   end
 
   def self.most_revenue(params)
-    InvoiceItem.successful
+    InvoiceItem.first
   end
 
 end

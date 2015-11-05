@@ -33,12 +33,13 @@ Rails.application.routes.draw do
           get "find_all"
           get "random"
           get "most_items"
+          get "best_day"
+          get "most_revenue"
         end
 
         member do
           get :invoice_items
           get :merchant
-          get :best_day
         end
       end
 
