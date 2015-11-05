@@ -1,7 +1,9 @@
 require 'test_helper'
 
 class CustomerTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "is valid" do
+    customer = Customer.first
+
+    assert customer.valid?
+  end
 end

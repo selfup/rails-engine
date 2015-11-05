@@ -63,4 +63,10 @@ class Api::V1::MerchantsControllerTest < ActionController::TestCase
 
     assert_response :success
   end
+
+  test '#revenue' do
+    get :revenue, format: :json, id: 1
+
+    assert_response :success
+  end
 end

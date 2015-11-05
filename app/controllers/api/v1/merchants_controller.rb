@@ -38,8 +38,7 @@ class Api::V1::MerchantsController < ApplicationController
   end
 
   def total_revenue
-    total_rev = { :total_revenue => Merchant.total_revenue(params).to_s }
-    respond_with total_rev
+    respond_with total_revenue: Merchant.total_revenue(params).to_s
   end
 
   def items

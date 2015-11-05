@@ -1,7 +1,9 @@
 require 'test_helper'
 
 class MerchantTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "is valid" do
+    merchant = Merchant.first
+
+    assert merchant.valid?
+  end
 end
