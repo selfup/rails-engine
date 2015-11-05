@@ -64,11 +64,4 @@ class Api::V1::CustomersControllerTest < ActionController::TestCase
 
     assert_response :success
   end
-
-  test '#favorite_merchant' do
-    skip
-    get :favorite_merchant, format: :json, first_name: "Regis"
-
-    assert_response :success
-  end
 end

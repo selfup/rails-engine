@@ -69,4 +69,16 @@ class Api::V1::MerchantsControllerTest < ActionController::TestCase
 
     assert_response :success
   end
+
+  test '#total_revenue' do
+    get :total_revenue, format: :json, id: 1
+
+    assert_response :success
+  end
+
+  test '#customers_with_pending_invoices' do
+    get :customers_with_pending_invoices, format: :json, id: 1
+
+    assert_response :success
+  end
 end
