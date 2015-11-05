@@ -13,4 +13,8 @@ class InvoiceItem < ActiveRecord::Base
     order("RANDOM()").first
   end
 
+  def self.successful
+    joins(:invoice).merge(Invoice.successful)
+  end
+
 end

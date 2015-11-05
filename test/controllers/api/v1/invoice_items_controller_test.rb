@@ -34,7 +34,7 @@ class Api::V1::InvoiceItemsControllerTest < ActionController::TestCase
     assert_equal item.item_id, json_response["item_id"]
     assert_equal item.invoice_id, json_response["invoice_id"]
     assert_equal item.quantity, json_response["quantity"]
-    assert_equal "0.01", json_response["unit_price"]
+    assert_equal "1.0", json_response["unit_price"]
   end
 
   test '#random' do

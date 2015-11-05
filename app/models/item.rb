@@ -22,4 +22,12 @@ class Item < ActiveRecord::Base
     sort_by { |key, value| value }.reverse
   end
 
+  def best_day
+    invoice_items.successful
+  end
+
+  def self.most_revenue(params)
+    InvoiceItem.successful
+  end
+
 end

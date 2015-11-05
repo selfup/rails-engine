@@ -38,6 +38,7 @@ Rails.application.routes.draw do
         member do
           get :invoice_items
           get :merchant
+          get :best_day
         end
       end
 
@@ -49,6 +50,7 @@ Rails.application.routes.draw do
           get "most_revenue"
           get "most_items"
           get "revenue", action: "total_revenue"
+          get "most_revenue"
         end
 
         member do

@@ -8,7 +8,8 @@ class Merchant < ActiveRecord::Base
   end
 
   def favorite_customer
-    cust_id = invoices.successful.group(:customer_id).order("count_id desc").count("id").first[0]
+    cust_id = invoices.successful.group(:customer_id).
+    order("count_id desc").count("id").first[0]
     Customer.find(cust_id)
   end
 
@@ -40,6 +41,11 @@ class Merchant < ActiveRecord::Base
 
   def customers_pending_invoices
     invoices.pending.distinct.map(&:customer)
+  end
+
+  def self.most_revenue(params)
+    all.sort_by(&:revenue).reverse.first(params[:quantity].to_i)
+    # all.order('id DESC').map { |find_rev| find_rev.revenue }.max
   end
 
 end
